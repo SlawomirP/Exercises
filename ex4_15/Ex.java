@@ -2,6 +2,7 @@ package ex4_15;
 
 import java.util.Scanner;
 
+
 public class Ex {
     public static void main(String[] args) {
      /*   4.15.1 Czy liczba podzielna przez trzy
@@ -84,11 +85,53 @@ public class Ex {
             System.out.println("We can't build triangle.");
         }
         System.out.println();
+
         // 4.15.3
+
+        System.out.println("--Bigger number--");
+
+        System.out.println("Write first number ...");
+        int first = getInt();
+
+        System.out.println("Write second number ...");
+        int second = getInt();
+
+        System.out.println("Bigger is " + compareResult(first, second));
+
+        // 4.15.4
+
+        System.out.println("---- The biggest ----");
+
+        System.out.println("Write first number...");
+        int firstN = getInt();
+        System.out.println("Write second number...");
+        int secondN = getInt();
+        System.out.println("Write third number...");
+        int thirdN = getInt();
+
+        System.out.println("The biggest number is " + theBiggest(firstN,secondN,thirdN));
+
     }
 
     static int getInt() {
         return new Scanner(System.in).nextInt();
+    }
+    static int compareResult (int a, int b){
+        return Math.max(a, b);
+    }
+
+    static int theBiggest (int a, int b, int c) {
+        int maxVal = 0;
+        int [] array = new int[3];
+        array[0] = a;
+        array[1] = b;
+        array[2] = c;
+        for (int i : array){
+            if (i > maxVal) {
+                maxVal = i;
+            }
+        }
+        return maxVal;
     }
 
 }
