@@ -101,9 +101,47 @@ public class ExMain {
         } else {
             System.out.println(word + " ins't polidrome.");
         }
+        System.out.println();
+
+        // 5.13.4
+
+        System.out.println("Write a number...");
+        int writeNumber = getInt();
 
 
+        while (true) {
+            System.out.println("Do you want continue y/n ?");
+            String decision = getString();
 
+            if (decision.equals("n")){
+                break;
+            }
+
+            System.out.println("Write another number ...");
+            int newNumber = getInt();
+
+            if (newNumber > writeNumber){
+                writeNumber = newNumber;
+            }
+        }
+
+        System.out.println("The biggest is " + writeNumber);
+
+        System.out.println();
+
+        // 5.13.5 -----------------------------------------
+        mainLoop:
+        for(int i = 1; i <= 10; i++){
+            if (i % 2 == 1){
+                continue;
+            }
+            for (int j = 1; j <= 10; j++){
+                System.out.print(j);
+                if (j > i){
+                    continue mainLoop;
+                }
+            }
+        }
     }
 
     static int getInt() {
@@ -119,6 +157,7 @@ public class ExMain {
         }
         return invert.toString();
     }
+
 
 }
 
