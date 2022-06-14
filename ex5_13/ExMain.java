@@ -58,21 +58,67 @@ package ex5_13;
 //         ****
 //        ******
 
+import java.util.Scanner;
+
 public class ExMain {
     public static void main(String[] args) {
 
-        // 5.13.1
+        // 5.13.1 ----------------------------
 
         int limit = 1;
 
         while (limit <= 10) {
             System.out.print(limit);
-            if(limit < 10){
+            if (limit < 10) {
                 System.out.print(", ");
             }
             limit++;
         }
+        System.out.println();
+
+        // 5.13.2 --------------------------
+
+        int result = 1;
+
+        System.out.println("----- Factorial -----");
+        System.out.println("Write your number ...");
+        int number = getInt();
+
+        for (int i = number; i > 0; i--) {
+            result *= i;
+        }
+        System.out.println("Factorial of " + number + " is: " + result);
+        System.out.println();
+
+        // 5.13.3 --------------------------
+
+        System.out.println("Write word ...");
+        String word = getString();
+        String wordInv = wordInversion(word);
+
+        if (word.equals(wordInv)){
+            System.out.println(word + " is polidrome.");
+        } else {
+            System.out.println(word + " ins't polidrome.");
+        }
+
 
 
     }
+
+    static int getInt() {
+        return new Scanner(System.in).nextInt();
+    }
+    static String getString() {
+        return new Scanner(System.in).nextLine();
+    }
+    static String wordInversion(String word) {
+        StringBuilder invert = new StringBuilder();
+        for (int i = word.length() - 1; i >= 0; i--) {
+            invert.append(word.charAt(i));
+        }
+        return invert.toString();
+    }
+
 }
+
