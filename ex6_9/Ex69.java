@@ -1,4 +1,7 @@
 package ex6_9;
+
+import java.util.Scanner;
+
 //6.9 Zadania
 //        6.9.1 Co druga wartość tablicy
 //        Napisz program, który wypisze co drugi element zdefiniowanych przez Ciebie tablic. Pierwsza
@@ -46,9 +49,54 @@ public class Ex69 {
             System.out.print(tabl2[i] + " ");
         }
 
+        System.out.println();
 
+        // 6.9.2
+        int maxValue = tabl1[0];
+        for (int i : tabl1){
+            if (maxValue < i){
+                maxValue = i;
+            }
+        }
+        System.out.println(maxValue + " is the biggest number");
 
+        System.out.println();
 
+        // 6.9.3
 
+        String [] tabl3 = {"ala", "ola", "bartek", "tomek"};
+
+        for(String i : tabl3){
+            System.out.println(i.toUpperCase() + " ");
+        }
+
+        System.out.println();
+
+        // 6.9.3
+
+        String [] tabl4 = {"ala", "ma", "kota", "i", "psa"};
+
+        for (int i = tabl4.length - 1; i >= 0 ; i--){
+            for(int j = tabl4[i].length() - 1; j >= 0; j--){
+                System.out.print(tabl4[i].charAt(j));
+            }
+            System.out.print(" ");
+        }
+
+        System.out.println();
+
+        // 6.9.4
+
+        int [] tabl5 = new int [8];
+
+        for(int i = 0 ; i < tabl5.length; i++){
+            System.out.println("Write your number ...");
+            tabl5[i] = getInt();
+        }
+
+    }
+
+    static int getInt(){
+        return new Scanner(System.in).nextInt();
     }
 }
