@@ -25,8 +25,27 @@ import java.util.Scanner;
 
 public class Ex7_7_5 {
     public static void main(String[] args) {
+
+        // 1
+
         System.out.println("Write word ...");
         System.out.println("Last letter in your word is " + getLast(getString()) + ".");
+        System.out.println();
+
+        // 2
+
+        System.out.println(isPolindrome ("abba"));
+        System.out.println(isPolindrome ("kot"));
+
+        System.out.println();
+
+        // 3
+
+        int [] newTable = {1,2,3,4,5};
+
+        System.out.println(counting(newTable));
+
+
     }
 
     static char getLast (String word){
@@ -34,5 +53,25 @@ public class Ex7_7_5 {
     }
     static String getString(){
        return new Scanner(System.in).nextLine();
+    }
+
+    static boolean isPolindrome(String word){
+
+        StringBuilder wordTemp = new StringBuilder();
+
+        for(int i = word.length() - 1; i >= 0; i--){
+            wordTemp.append(word.charAt(i));
+        }
+        String wordInvert = wordTemp.toString();
+
+        return word.equals(wordInvert);
+    }
+
+    static int counting (int [] tabl){
+        int result = 0;
+        for(int i = 0; i < tabl.length; i++){
+            result += tabl[i];
+        }
+        return result;
     }
 }
