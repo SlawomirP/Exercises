@@ -1,4 +1,4 @@
-package ex775;
+package ex7_7_5;
 
 //        1. Metoda zwracająca ostatni znak
 //        Napisz metodę, która zwróci ostatni znak w przesłanym jako argument stringu.
@@ -21,6 +21,18 @@ package ex775;
 //
 //                int liczbaLiterA = zliczWystapienia("Ala ma kota", 'a');
 
-public class Ex7_7_5 {
+import java.util.Scanner;
 
+public class Ex7_7_5 {
+    public static void main(String[] args) {
+        System.out.println("Write word ...");
+        System.out.println("Last letter in your word is " + getLast(getString()) + ".");
+    }
+
+    static char getLast (String word){
+        return word.charAt(word.length() - 1);
+    }
+    static String getString(){
+       return new Scanner(System.in).nextLine();
+    }
 }
