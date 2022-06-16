@@ -134,7 +134,7 @@ public class Ex69 {
 
             for (int i = 0; i < tabl7.length; i++) {
 
-                if (tabl7[i] == tabl8[i]) {
+                if (tabl7[i].equals(tabl8[i])) {
                     compareC = true;
                 } else {
                     compareC = false;
